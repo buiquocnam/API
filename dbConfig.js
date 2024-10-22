@@ -15,13 +15,14 @@ function getLocalIp() {
     return 'localhost'; // Mặc định nếu không tìm thấy IP
 }
 
+
 const config = {
     user: 'sa', // Tên người dùng
     password: '123456', // Mật khẩu
-    server: process.env.DB_SERVER || getLocalIp(), // Địa chỉ máy chủ
+    server:  '192.168.1.6', // Địa chỉ máy chủ
     database: 'Cinema', // Tên cơ sở dữ liệu
     options: {
-        encrypt: true, // Nếu sử dụng Azure, để true
+        encrypt: false, // Nếu sử dụng Azure, để true
         trustServerCertificate: true // Chỉ để phát triển
     }
 };
