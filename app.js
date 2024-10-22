@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const cors = require('cors');
+app.use(cors());
 
 // Middleware để parse JSON
 app.use(express.json());
@@ -21,6 +23,6 @@ app.use('/api', emailRoute)
 app.use('/api/accounts', accountRoute);
 
 // Khởi động server
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server đang chạy tại http://localhost:${port}`);
 });
